@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation ,AfterViewInit} from '@angular/core';
 import * as joint from '@joint/plus/joint-plus';
 import workflowTasks from '../../workflow-tasks.json';
 
@@ -10,7 +10,7 @@ import workflowTasks from '../../workflow-tasks.json';
   encapsulation: ViewEncapsulation.None,
   standalone: true
 })
-export class WorkflowComponent {
+export class WorkflowComponent implements AfterViewInit {
   public workflowTasks=workflowTasks;
 
   public ngAfterViewInit() {

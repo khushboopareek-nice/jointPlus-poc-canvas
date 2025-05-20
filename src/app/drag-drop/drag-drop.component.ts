@@ -1,5 +1,5 @@
 import * as joint from '@joint/plus';
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, AfterViewInit, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-drag-drop',
@@ -8,8 +8,9 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
   standalone: true,
 })
-export class DragDropComponent {
-  showDialog(element) {
+export class DragDropComponent implements AfterViewInit {
+
+  public showDialog(element) {
     const name = prompt(
       'You dropped: ' + element.get('type') + '. Enter a label:',
       ''
@@ -18,8 +19,9 @@ export class DragDropComponent {
       element.attr('label/text', name);
     }
   }
-
+  
   ngAfterViewInit() {
+    
     const { dia, shapes, mvc, ui, highlighters, util } = joint;
 
     const paperContainerEl = document.getElementById('paper-container');
@@ -48,7 +50,7 @@ export class DragDropComponent {
       snapLinks: { radius: 10 },
     });
 
-    paperContainerEl.appendChild(paper.el);
+    paperContainerEl?.appendChild(paper.el);
 
     paper.on('element:magnet:pointerclick', (elementView, evt, magnet) => {
       paper.removeTools();
@@ -737,5 +739,6 @@ export class DragDropComponent {
       });
     }
       }
+
     }
 

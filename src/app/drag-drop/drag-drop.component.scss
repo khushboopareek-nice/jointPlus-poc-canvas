@@ -1,28 +1,26 @@
+@import '@joint/plus/joint-plus.css';
+
 #stencil-container {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100px;
-    bottom: 0;
+     width: 100px;
+     border: 1px solid #ccc;
+     background-color: #f9f9f9;
+     height: 900px;
   }
-  
   #paper-container {
-    position: absolute;
-    right: 0;
-    top: 0;
-    left: 100px;
-    bottom: 0;
+    height: 900px;
+    width: 900px;
+    border: 1px solid #ccc;
   }
-  
-  #logo {
-    position: absolute;
-    bottom: 20px;
-    right: 0;
-  }
-  
   .invalid-drop-target {
     stroke: #940027;
   }
   .caret{
     display: none;
+  }
+  .container{
+    width: 1000px;
+    height: 900px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
   }

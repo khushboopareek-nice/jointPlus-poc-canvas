@@ -1,22 +1,11 @@
-import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { Routes } from '@angular/router';
 import { DragDropComponent } from './drag-drop/drag-drop.component';
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { WorkflowComponent } from './workflow/workflow.component';
+import { HeatmapComponent } from './heatmap/heatmap.component';
 
 export const routes: Routes = [
-    { path: '',component: AppComponent },    // Default route (home)
+    { path: '', redirectTo: 'workflow', pathMatch: 'full'},    // Default route (home)
     { path: 'workflow', component: WorkflowComponent  }, // About page
     { path: 'dragDrop', component: DragDropComponent  }, // About page
+    {path :'heatmap',component:HeatmapComponent}, // About page
   ];
-  @NgModule({
-    imports: [
-      AppComponent,
-      BrowserModule,
-      RouterModule.forRoot(routes) // Import the RouterModule with routes configuration
-    ],
-    exports: [RouterModule],
-    providers: [],
-  })
-  export class AppModule { }
