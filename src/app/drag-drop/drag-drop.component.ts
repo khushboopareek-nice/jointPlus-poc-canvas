@@ -8,7 +8,7 @@ import { Component, ViewEncapsulation, AfterViewInit, OnInit } from '@angular/co
   encapsulation: ViewEncapsulation.None,
   standalone: true,
 })
-export class DragDropComponent implements AfterViewInit {
+export class DragDropComponent implements AfterViewInit{
 
   public showDialog(element) {
     const name = prompt(
@@ -50,7 +50,7 @@ export class DragDropComponent implements AfterViewInit {
       snapLinks: { radius: 10 },
     });
 
-    paperContainerEl?.appendChild(paper.el);
+    paperContainerEl.appendChild(paper.el);
 
     paper.on('element:magnet:pointerclick', (elementView, evt, magnet) => {
       paper.removeTools();
@@ -637,8 +637,8 @@ export class DragDropComponent implements AfterViewInit {
         // Adjust dropdown position dynamically on node movement
         element.on('change:position', () => {
           const newPosition = element.getBBox().center();
-          dropdown.style.left = `${newPosition.x + 60}px`;
-          dropdown.style.top = `${newPosition.y-50}px`;
+        dropdown.style.left = `${newPosition.x + 60}px`;
+        dropdown.style.top = `${newPosition.y-30}px`;
         });
       });
     }

@@ -24,3 +24,6 @@
     flex-direction: row;
     flex-wrap: nowrap;
   }
+  #stencil-container .joint-stencil ,  #stencil-container .joint-stencil > .content{
+    position:relative;
+  }
